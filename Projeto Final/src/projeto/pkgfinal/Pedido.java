@@ -1,8 +1,7 @@
 package projeto.pkgfinal;
 
-public class Pedido implements StatusPedido{
-    
-    
+public class Pedido implements StatusPedido {
+
     Cardapio cardapio = new Cardapio("Cardapio.txt");
     int idPedido;
     String status;
@@ -51,10 +50,10 @@ public class Pedido implements StatusPedido{
         this.idPedido = idPedido;
     }
 
-     public String getStatus() {
+    public String getStatus() {
         return status;
     }
-    
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -92,15 +91,15 @@ public class Pedido implements StatusPedido{
             }
         }
     }
-    
+
     public void limparPedido() {
         this.cabeca = null;
         this.cauda = null;
         this.tamanho = 0;
-        
+
     }
 
-    public Pedido finalizar() {        
+    public Pedido finalizar() {
         return new Pedido(this.idPedido + 1);
     }
 
@@ -110,8 +109,8 @@ public class Pedido implements StatusPedido{
             itemAux = itemAux.getProximo();
         return itemAux;
     }
-    
-     @Override
+
+    @Override
     public void atualizarStatus(String novoStatus) {
         this.status = novoStatus;
         System.out.println("Pedido #" + idPedido + " agora está: " + novoStatus);
