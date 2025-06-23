@@ -9,7 +9,7 @@ public class App {
         JFrame tela = new JFrame();
 
         tela.add(token);
-        tela.setSize(600, 500);
+        tela.setSize(610, 510);
         tela.setVisible(true);
         tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

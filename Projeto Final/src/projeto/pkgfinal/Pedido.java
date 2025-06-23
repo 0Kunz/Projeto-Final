@@ -1,7 +1,8 @@
 package projeto.pkgfinal;
 
 public class Pedido {
-
+    
+    
     Cardapio cardapio = new Cardapio("Cardapio.txt");
     int idPedido;
     String status;
@@ -50,10 +51,10 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public String getStatus() {
+     public String getStatus() {
         return status;
     }
-
+    
     public void setStatus(String status) {
         this.status = status;
     }
@@ -93,11 +94,15 @@ public class Pedido {
             }
         }
     }
-
-    public Pedido finalizar() {
-        // implementar chamada para acionar a cozinha
+    
+    public void limparPedido() {
+        this.cabeca = null;
+        this.cauda = null;
+        this.tamanho = 0;
         
+    }
 
+    public Pedido finalizar() {        
         return new Pedido(this.idPedido + 1);
     }
 
