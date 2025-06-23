@@ -1,6 +1,6 @@
 package projeto.pkgfinal;
 
-public class Pedido {
+public class Pedido implements StatusPedido{
     
     
     Cardapio cardapio = new Cardapio("Cardapio.txt");
@@ -79,13 +79,11 @@ public class Pedido {
         Item itemAux = this.getCabeca();
         Item itemAnterior = null;
 
-        // Varredura para descobrir qual nodo deve ser excluído
         while (itemAux != null && itemAux.getId() != i) {
             itemAnterior = itemAux;
             itemAux = itemAux.getProximo();
         }
 
-        // Caso o nodo a ser excluído seja o primeiro da lista
         if (this.getCabeca() != null) {
             if (itemAnterior == null) {
                 this.setCabeca(itemAux.getProximo());
@@ -111,5 +109,11 @@ public class Pedido {
         while (itemAux != null && itemAux.getId() != i + 1)
             itemAux = itemAux.getProximo();
         return itemAux;
+    }
+    
+     @Override
+    public void atualizarStatus(String novoStatus) {
+        this.status = novoStatus;
+        System.out.println("Pedido #" + idPedido + " agora está: " + novoStatus);
     }
 }

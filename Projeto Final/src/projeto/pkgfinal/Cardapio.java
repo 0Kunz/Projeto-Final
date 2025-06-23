@@ -9,6 +9,7 @@ public class Cardapio {
     ArrayList<String> nomes = new ArrayList<String>();
     ArrayList<Integer> ids = new ArrayList<Integer>();
     ArrayList<Double> precos = new ArrayList<Double>();
+    
 
     public Cardapio(String cardapio) {
         this.arq_cardapio = new File(cardapio);
