@@ -9,7 +9,6 @@ public class Cardapio {
     ArrayList<String> nomes = new ArrayList<String>();
     ArrayList<Integer> ids = new ArrayList<Integer>();
     ArrayList<Double> precos = new ArrayList<Double>();
-    
 
     public Cardapio(String cardapio) {
         this.arq_cardapio = new File(cardapio);
@@ -31,7 +30,7 @@ public class Cardapio {
                             this.nomes.add(num);
                             num = "";
                             nome = false;
-                        } 
+                        }
                     } else {
                         if (c != '*') {
                             num += c;
@@ -50,6 +49,6 @@ public class Cardapio {
     }
 
     public Item getItem(int id) {
-        return new Item(id, this.nomes.get(id - 1),  this.precos.get(id-1));
+        return new Item(id, this.nomes.get(id - 1), this.precos.get(id - 1));
     }
 }
